@@ -1,7 +1,10 @@
 import { combineReducers } from 'redux';
 
-const rootReducer = combineReducers({
+import todoReducer from './reducers/todoReducer';
 
+const rootReducer = combineReducers({
+  todos: todoReducer,
 });
 
+export type RootState = ReturnType<typeof rootReducer>;
 export default rootReducer;

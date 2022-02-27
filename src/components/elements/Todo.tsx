@@ -1,11 +1,13 @@
+import { TodoType } from '../../types/todoTypes';
+
 type TodoProps = {
-  children: React.ReactNode;
+  todo: TodoType;
 };
 
-const Todo = ({ children }: TodoProps): JSX.Element =>
+const Todo = ({ todo }: TodoProps): JSX.Element =>
   (
     <div>
-      {children}
+      {todo.text}
     </div>
   );
 
