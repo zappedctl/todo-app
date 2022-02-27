@@ -1,19 +1,19 @@
-import { useSelector } from 'react-redux';
-
 import Todo from '../elements/Todo';
 
-import { RootState } from '../../redux/rootReducer';
+import { TodoType } from '../../types/todoTypes';
 
-const TodoList = () => {
-  const { todoData } = useSelector((state: RootState) => state.todos);
+type TodoListProps = {
+  todos: TodoType[];
+};
 
+const TodoList = ({ todos }: TodoListProps) => {
   return (
-    <ul>
-      {todoData.map(
+    <div>
+      {todos.map(
         todo =>
         <Todo key={todo.id} todo={todo} />
       )}
-    </ul>
+    </div>
   );
 }
 
