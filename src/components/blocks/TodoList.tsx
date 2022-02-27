@@ -8,12 +8,12 @@ const TodoList = () => {
   const { todoData } = useSelector((state: RootState) => state.todos);
 
   return (
-    <div>
+    <ul>
       {todoData.map(
         todo =>
         <Todo key={todo.id} todo={todo} />
       )}
-    </div>
+    </ul>
   );
 }
 
