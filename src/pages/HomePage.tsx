@@ -1,13 +1,9 @@
-import Todo from '../components/elements/Todo';
+import TodoList from '../components/blocks/TodoList';
 
 const HomePage = (): JSX.Element =>
   (
     <>
-      <Todo>Adipisicing quis dolorum sed dolor!</Todo>
-      <Todo>Adipisicing quis dolorum sed dolor!</Todo>
-      <Todo>Adipisicing quis dolorum sed dolor!</Todo>
-      <Todo>Adipisicing quis dolorum sed dolor!</Todo>
-      <Todo>Adipisicing quis dolorum sed dolor!</Todo>
+      <TodoList />
     </>
   );
 
