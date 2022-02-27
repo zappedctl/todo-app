@@ -1,6 +1,8 @@
 import { useSelector } from 'react-redux';
 
+import TodoWrap from '../components/TodoWrap/TodoWrap';
 import TodoList from '../components/TodoList/TodoList';
+import TodoForm from '../components/TodoForm/TodoForm';
 
 import { RootState } from '../redux/rootReducer';
 
@@ -9,7 +11,10 @@ const HomePage = (): JSX.Element => {
 
   return (
     <>
-      <TodoList todos={todoData} />
+      <TodoWrap>
+        <TodoList todos={todoData} />
+        <TodoForm />
+      </TodoWrap>
     </>
   );
 }
