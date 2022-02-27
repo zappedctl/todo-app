@@ -1,3 +1,5 @@
+import { x } from '@xstyled/styled-components';
+
 import Todo from '../Todo/Todo';
 
 import { TodoType } from '../../types/todoTypes';
@@ -8,12 +10,16 @@ type TodoListProps = {
 
 const TodoList = ({ todos }: TodoListProps) => {
   return (
-    <div>
+    <x.div
+      display="flex"
+      flexDirection="column"
+      width="100%"
+    >
       {todos.map(
         todo =>
         <Todo key={todo.id} todo={todo} />
       )}
-    </div>
+    </x.div>
   );
 }
 

@@ -1,3 +1,5 @@
+import { x } from '@xstyled/styled-components';
+
 import { TodoType } from '../../types/todoTypes';
 
 type TodoProps = {
@@ -6,9 +8,12 @@ type TodoProps = {
 
 const Todo = ({ todo }: TodoProps): JSX.Element =>
   (
-    <div>
+    <x.div
+      p={6}
+      bg="boxColor"
+    >
       {todo.text}
-    </div>
+    </x.div>
   );
 
 export default Todo;

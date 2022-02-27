@@ -5,6 +5,7 @@ import ResetStyles from '../src/theme/resetStyles';
 import MainStyle from '../src/theme/mainStyle';
 
 export const parameters = {
+  layout: 'fullscreen',
   actions: { argTypesRegex: "^on[A-Z].*" },
   controls: {
     matchers: {
