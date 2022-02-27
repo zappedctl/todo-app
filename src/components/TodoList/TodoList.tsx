@@ -1,4 +1,4 @@
-import Todo from '../elements/Todo';
+import Todo from '../Todo/Todo';
 
 import { TodoType } from '../../types/todoTypes';
 

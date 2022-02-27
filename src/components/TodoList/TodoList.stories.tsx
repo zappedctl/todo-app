@@ -9,10 +9,10 @@ export default {
 
 export const Regular: ComponentStory<typeof TodoList> = () => (
     <TodoList todos={[
-      { id: 0, text: 'Todo 1' },
-      { id: 1, text: 'Todo 2' },
-      { id: 2, text: 'Todo 3' },
-      { id: 3, text: 'Todo 4' },
-      { id: 4, text: 'Todo 5' },
+      { id: 0, text: 'Todo 1', done: false },
+      { id: 1, text: 'Todo 2', done: false },
+      { id: 2, text: 'Todo 3', done: false },
+      { id: 3, text: 'Todo 4', done: false },
+      { id: 4, text: 'Todo 5', done: false },
     ]} />
 );

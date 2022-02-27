@@ -12,6 +12,7 @@ export const Regular: ComponentStory<typeof Todo> = () => (
     todo={{
       id: 0,
       text: 'Sit similique dignissimos quisquam assumenda',
+      done: false,
     }}
   />
 ); 
