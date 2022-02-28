@@ -1,17 +1,34 @@
-import { useState, ChangeEvent } from 'react';
+import { useState, ChangeEvent, KeyboardEvent } from 'react';
+import { useDispatch } from 'react-redux';
+import { v4 as uuidv4 } from 'uuid';
 import { x } from '@xstyled/styled-components';
 
 import SolidIcon from '../SolidIcon/SolidIcon';
 
+import todoActions from '../../redux/actions/todoActions';
+
 const TodoForm = (): JSX.Element => {
   const [todoText, setTodoText] = useState('');
+  const dispatch = useDispatch();
 
   const handleChange = (e: ChangeEvent<HTMLInputElement>) => {
     setTodoText(e.target.value);
   }
 
+  const handleKeyDown = (e: KeyboardEvent<HTMLInputElement>) => {
+    if (e.key == 'Enter') handleSubmit();
+  }
+
   const handleSubmit = () => {
-    alert('Sent');
+    todoText && dispatch({
+      type: todoActions.ADD_TODO,
+      payload: {
+        id: uuidv4(),
+        text: todoText,
+      },
+    });
+
+    setTodoText('');
   }
 
   return (
@@ -28,6 +45,7 @@ const TodoForm = (): JSX.Element => {
         border="none"
         value={todoText}
         onChange={(e: ChangeEvent<HTMLInputElement>) => handleChange(e)}
+        onKeyDown={(e: KeyboardEvent<HTMLInputElement>) => handleKeyDown(e)}
       />
       <x.div
         display="flex"
