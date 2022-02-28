@@ -1,3 +1,4 @@
+import { useState } from 'react';
 import { useDispatch } from 'react-redux';
 import { x } from '@xstyled/styled-components';
 
@@ -11,7 +12,19 @@ type TodoProps = {
 };
 
 const Todo = ({ todo }: TodoProps): JSX.Element => {
+  const [isRemoved, setIsRemoved] = useState(false);
   const dispatch = useDispatch();
+
+  const removeTodo = () => {
+    setIsRemoved(true);
+
+    setTimeout(() => {
+      dispatch({
+        type: ActionType.REMOVE_TODO,
+        payload: todo.id,
+      });
+    }, 200);
+  }
 
   return (
     <x.div
@@ -19,6 +32,8 @@ const Todo = ({ todo }: TodoProps): JSX.Element => {
       alignItems="center"
       p={6}
       bg={todo.done ? 'lightPrimary' : 'boxColor'}
+      opacity={isRemoved ? 0 : 1}
+      transition="allFast"
     >
       <x.div
         mr="auto"
@@ -39,10 +54,7 @@ const Todo = ({ todo }: TodoProps): JSX.Element => {
           <SolidIcon iconName="check" size={18} />
         </x.div>
         <x.div
-          onClick={() => dispatch({
-            type: ActionType.REMOVE_TODO,
-            payload: todo.id,
-          })}
+          onClick={() => removeTodo()}
         >
           <SolidIcon iconName="times" size={18} />
         </x.div>

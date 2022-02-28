@@ -4,10 +4,13 @@ const mainTheme = {
   space: defaultTheme.space,
   sizes: defaultTheme.space,
   colors: {
-    primary: '#2facfa',
+    primary: '#52a3ff',
     lightPrimary: '#f5faff',
     boxColor: '#fdfdfd',
-    todoWrapBackground: '#21b04c',
+    todoWrapBackground: '#34913c',
+  },
+  transitions: {
+    allFast: '.2s all',
   },
 };
 
