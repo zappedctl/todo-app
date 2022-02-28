@@ -29,7 +29,15 @@ const Todo = ({ todo }: TodoProps): JSX.Element => {
         display="flex"
         gap={6}
       >
-        <SolidIcon iconName="check" size={18} />
+        <x.div
+          color={todo.done ? 'primary' : 'inherit'}
+          onClick={() => dispatch({
+            type: todoActions.TOGGLE_TODO_ACTIVE,
+            payload: todo.id,
+          })}
+        >
+          <SolidIcon iconName="check" size={18} />
+        </x.div>
         <x.div
           onClick={() => dispatch({
             type: todoActions.REMOVE_TODO,
