@@ -5,7 +5,7 @@ import { x } from '@xstyled/styled-components';
 
 import SolidIcon from '../SolidIcon/SolidIcon';
 
-import todoActions from '../../redux/actions/todoActions';
+import { ActionType } from '../../redux/action-types/todoActionTypes';
 
 const TodoForm = (): JSX.Element => {
   const [todoText, setTodoText] = useState('');
@@ -21,7 +21,7 @@ const TodoForm = (): JSX.Element => {
 
   const handleSubmit = () => {
     todoText && dispatch({
-      type: todoActions.ADD_TODO,
+      type: ActionType.ADD_TODO,
       payload: {
         id: uuidv4(),
         text: todoText,

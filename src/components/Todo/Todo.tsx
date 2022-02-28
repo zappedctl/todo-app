@@ -3,8 +3,8 @@ import { x } from '@xstyled/styled-components';
 
 import SolidIcon from '../SolidIcon/SolidIcon';
 
+import { ActionType } from '../../redux/action-types/todoActionTypes';
 import { TodoType } from '../../types/todoTypes';
-import todoActions from '../../redux/actions/todoActions';
 
 type TodoProps = {
   todo: TodoType;
@@ -18,7 +18,7 @@ const Todo = ({ todo }: TodoProps): JSX.Element => {
       display="flex"
       alignItems="center"
       p={6}
-      bg="boxColor"
+      bg={todo.done ? 'lightPrimary' : 'boxColor'}
     >
       <x.div
         mr="auto"
@@ -32,7 +32,7 @@ const Todo = ({ todo }: TodoProps): JSX.Element => {
         <x.div
           color={todo.done ? 'primary' : 'inherit'}
           onClick={() => dispatch({
-            type: todoActions.TOGGLE_TODO_ACTIVE,
+            type: ActionType.TOGGLE_TODO_DONE,
             payload: todo.id,
           })}
         >
@@ -40,7 +40,7 @@ const Todo = ({ todo }: TodoProps): JSX.Element => {
         </x.div>
         <x.div
           onClick={() => dispatch({
-            type: todoActions.REMOVE_TODO,
+            type: ActionType.REMOVE_TODO,
             payload: todo.id,
           })}
         >

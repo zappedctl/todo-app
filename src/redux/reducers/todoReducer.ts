@@ -1,5 +1,6 @@
+import { ActionType } from '../action-types/todoActionTypes';
+import { Action } from '../actions/todoActions';
 import { TodoType } from '../../types/todoTypes';
-import todoActions from '../actions/todoActions';
 
 interface InitialStateDefaultObject {
   todoData: TodoType[];
@@ -9,9 +10,9 @@ const INITIAL_STATE: InitialStateDefaultObject = {
   todoData: [],
 };
 
-const todoReducer = (state = INITIAL_STATE, action: { type: string, payload: TodoType | string }) => {
+const todoReducer = (state = INITIAL_STATE, action: Action) => {
   switch (action.type) {
-    case todoActions.ADD_TODO:
+    case ActionType.ADD_TODO:
       return {
         ...state,
         todoData: [
@@ -20,7 +21,7 @@ const todoReducer = (state = INITIAL_STATE, action: { type: string, payload: Tod
         ],
       };
 
-    case todoActions.REMOVE_TODO:
+    case ActionType.REMOVE_TODO:
       return {
         ...state,
         todoData: state.todoData.filter(
@@ -29,7 +30,7 @@ const todoReducer = (state = INITIAL_STATE, action: { type: string, payload: Tod
         ),
       };
 
-    case todoActions.TOGGLE_TODO_ACTIVE:
+    case ActionType.TOGGLE_TODO_DONE:
       return {
         ...state,
         todoData: state.todoData.map(
