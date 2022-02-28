@@ -4,6 +4,7 @@ const mainTheme = {
   space: defaultTheme.space,
   sizes: defaultTheme.space,
   colors: {
+    primary: '#2facfa',
     boxColor: '#fdfdfd',
     todoWrapBackground: '#21b04c',
   },
