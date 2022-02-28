@@ -10,7 +10,7 @@ export default {
 export const Regular: ComponentStory<typeof Todo> = () => (
   <Todo
     todo={{
-      id: 0,
+      id: '0',
       text: 'Sit similique dignissimos quisquam assumenda',
       done: false,
     }}
